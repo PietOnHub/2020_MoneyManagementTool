@@ -1,0 +1,58 @@
+{
+    "bank": [
+        {
+            "name": "YOUR_BANK",
+            "type": "Giro",
+            "structure": {
+                "balance": [
+                    5,
+                    1
+                ],
+                "header_line": 7,
+                "header_columns": {
+                    "Datum": 0,
+                    "Betrag": 7,
+                    "Buchungstext": 2,
+                    "Gegenkonto": 3,
+                    "Verwendungsnachweis": 4
+                }
+            },
+            "formater": {
+                "saldo": {
+                    "decimal": ",",
+                    "thousand": "."
+                },
+                "transaction": {
+                    "decimal": ",",
+                    "thousand": "."
+                }
+            }
+        },
+        {
+            "name": "YOUR_BANK",
+            "type": "Visa",
+            "structure": {
+                "balance": [
+                    5,
+                    1
+                ],
+                "header_line": 8,
+                "header_columns": {
+                    "Datum": 2,
+                    "Betrag": 4,
+                    "Beschreibung": 3
+                }
+            },
+            "formater": {
+                "saldo": {
+                    "decimal": ".",
+                    "thousand": ","
+                },
+                "transaction": {
+                    "decimal": ",",
+                    "thousand": "."
+                }
+            }
+        }
+    ]
+}

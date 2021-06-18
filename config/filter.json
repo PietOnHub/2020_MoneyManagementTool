@@ -1,0 +1,43 @@
+{
+  "filter_groups": [
+    {
+      "name": "Gehalt",
+      "definitions": [
+        {
+          "phrase": "Lohn",
+          "field": []
+        },
+        {
+          "phrase": "Gehalt",
+          "field": []
+        },
+        {
+          "phrase": "Rente ",
+          "field": []
+        }
+      ]
+    },
+    {
+      "name": "Wohnen",
+      "definitions": [
+        {
+          "phrase": "Miete",
+          "field": []
+        }
+      ]
+    },
+    {
+      "name": "Online Shopping",
+      "definitions": [
+        {
+          "phrase": "Amazon",
+          "field": []
+        },
+        {
+          "phrase": "eBay ",
+          "field": []
+        }
+      ]
+    }
+  ]
+}

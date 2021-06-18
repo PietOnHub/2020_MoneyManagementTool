@@ -1,0 +1,35 @@
+import sqlite3
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+connection = sqlite3.connect(\"data.db\")
+cursor = connection.cursor()
+
+query = (\"SELECT * FROM buchung\")
+df = pd.read_sql_query(query, connection)
+
+#df
+
+--------------------------------------------------------------------------------------------------------------------------------------
+### FIRST CHART: Einahmen / Ausgaben je Kategorie"
+
+
+query = (\"SELECT strftime('%Y',datum) as Year, kategorie as Kategorie, round(SUM(betrag),2) as Betrag FROM buchung GROUP BY Year, kategorie\")
+df = pd.read_sql_query(query, connection)
+df_mod = df.pivot(index=\"Kategorie\", columns=\"Year\", values=\"Betrag\").fillna(0)
+
+df_mod.plot.bar()"
+
+--------------------------------------------------------------------------------------------------------------------------------------
+### SECOND CHART: Einahmen / Ausgaben kategorisch über Zeit"
+
+
+query = (\"SELECT strftime('%Y/%m',datum) as Month, kategorie as Kategorie, round(SUM(betrag),2) as Betrag FROM buchung GROUP BY Month, kategorie\")
+df = pd.read_sql_query(query, connection)
+df_mod = df.pivot(index=\"Month\", columns=\"Kategorie\", values=\"Betrag\").fillna(0)
+df_mod.plot(kind=\"bar\", stacked=\"True\")"
+
+
+queryDaysum = (\"SELECT datum as Datum, SUM(betrag) as Saldo FROM buchung GROUP BY datum ORDER BY datum ASC\")
+df = pd.read_sql_query(queryDaysum, connection)
