@@ -1,4 +1,4 @@
-# 2020_MoneyManagementTool
+# MoneyManagementTool
 Tool for interactive parsing, categorizing and presenting merged transaction data of multiple sources e.g. bank account and related credit card(s).
 Techniques learned:
  - modularized project structure with setup, parser, categorizer, calculator and CLI/GUI handling
